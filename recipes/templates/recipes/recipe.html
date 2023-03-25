@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> {{ recipe.recipe_name }} </title>
+  <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+
+  <header>
+    {{ recipe.recipe_name }}
+  </header>
+
+  <section>
+    <ul>
+      {% for ingredient in recipe.ingredients.all %}
+        <li> {{ ingredient.name }} </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+</body>
+</html>
