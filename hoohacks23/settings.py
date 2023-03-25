@@ -77,15 +77,10 @@ WSGI_APPLICATION = 'hoohacks23.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'recipes',
-        'USER': 'postgres',
-        'PASSWORD': 'PostgresAdmin!',
-        'HOST': 'localhost',
-        'PORT': '',
-        # 'OPTIONS': {
-        #     'service': 'my_service',
-        #     'passfile': '.my_pgpass',
-        # },
+        'OPTIONS': {
+            'service': 'my_service',
+            'passfile': '.my_pgpass',
+        },
     }
 }
 
