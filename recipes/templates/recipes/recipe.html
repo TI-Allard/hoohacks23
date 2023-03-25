@@ -3,7 +3,7 @@
 
 <head>
   <title> {{ recipe.recipe_name }} </title>
-  <link rel="stylesheet" href="recipe.css">
+ <!-- <link rel="stylesheet" href="recipe.css">-->
 </head>
 
 <body>
@@ -14,9 +14,11 @@
 
   <section>
     <ul>
-      {% for ingredient in recipe.ingredients.all %}
+      hello
+      {{ recipe.recipe_name }}
+      <!--{% for ingredient in recipe.ingredients.all %}
         <li> {{ ingredient.name }} </li>
-      {% endfor %}
+      {% endfor %}-->
     </ul>
   </section>
 
