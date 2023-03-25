@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'recipes.apps.RecipesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,8 +76,16 @@ WSGI_APPLICATION = 'hoohacks23.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'recipes',
+        'USER': 'postgres',
+        'PASSWORD': 'PostgresAdmin!',
+        'HOST': 'localhost',
+        'PORT': '',
+        # 'OPTIONS': {
+        #     'service': 'my_service',
+        #     'passfile': '.my_pgpass',
+        # },
     }
 }
 
