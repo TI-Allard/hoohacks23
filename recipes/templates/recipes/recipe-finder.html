@@ -35,12 +35,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
   <div>
-    <p class="w3-center w3-text-grey" style="text-align:center; font-size:25px">Work in progress...</p>
+    <h2 class="w3-center w3-text-grey" style="text-align:center; font-size:50px">Search for Recipes...</h2>
   </div>
 
-  <form action="{% url 'recipes:search-results' %}" method="get">
-    <input name="q" type="text" placeholder="Search...">
+  <form action="{% url 'recipes:search-results' %}" method="get" style="margin: auto; width: 220px;">
+    <input name="q" type="text" placeholder="Search..." align="center" style="margin:32px">
   </form>
+
 
 <!-- End page content -->
 </div>

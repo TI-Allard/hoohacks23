@@ -5,6 +5,11 @@ register = template.Library()
 
 
 @register.simple_tag
+def get_iterator(list):
+    return range((len(list) // 4) + 1)
+
+
+@register.simple_tag
 def get_index(i, j):
     return 4 * int(i) + int(j)
 

@@ -40,12 +40,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:1100px">
+<div class="w3-content" style="max-width:1500px">
 
 
 <!--Recipe List-->
-  {% for i in row_iterator %}
-  <div class="w3-row-padding w3-padding-16 w3-center">
+  {% get_iterator recipes_list as iterator %}
+  {% for i in iterator %}
+  <div class="w3-row-padding w3-padding-16 w3-center" style="margin:30px">
     {% for j in "0123" %}
     {% get_recipe recipes_list i j as recipe %}
     {% if recipe != None %}
