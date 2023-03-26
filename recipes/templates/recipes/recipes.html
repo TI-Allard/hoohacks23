@@ -20,11 +20,11 @@ h1, h2, h3, h4, h5, h6 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:2px;">
-    <a href="" class="w3-bar-item w3-button">Recipes Home</a>
+    <a href="../../" class="w3-bar-item w3-button">Recipes Home</a>
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small">
-      <a href="recipe-finder/" class="w3-bar-item w3-button">Recipe Finder</a>
-      <a href="about/" class="w3-bar-item w3-button">About</a>
+      <a href="../../recipe-finder/" class="w3-bar-item w3-button">Recipe Finder</a>
+      <a href="../../about" class="w3-bar-item w3-button">About</a>
     </div>
   </div>
 </div>
@@ -32,28 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
-  <img class="w3-image" src="{% static 'recipes/header_image.jpg' %}" alt="Spread of delicious meals" width="1600" height="800">
+  <img class="w3-image" src="None" alt="Header Image Goes Here" width="1600" height="800">
   <div class="w3-display-bottomleft w3-padding-large">
-    <h1 style="font-size:150px; font-size: 15vw; color:white">Recipes</h1>
+    <h1 style="font-size:300px; color:white">Header Image Text Here</h1>
   </div>
 </header>
 
 
 <!-- Page content -->
 <div class="w3-content" style="max-width:1100px">
-
-
-<!--Recipe List-->
-  {% for i in row_iterator %}
-  <div class="w3-row-padding w3-padding-16 w3-center">
-    {% for j in "0123" %}
-    <div class="w3-quarter">
-      <a href="{% get_slug_from_name recipes_list i j %}" style="font-size:25px">{% get_recipe_name recipes_list i j %}</a>
-      <p>Description goes here!</p>
-    </div>
-    {% endfor %}
-  </div>
-  {% endfor %}
 
 
 <!-- End page content -->

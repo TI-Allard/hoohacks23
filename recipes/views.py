@@ -19,12 +19,17 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 
-def recipe(request, recipes_id):
-    recipe = Recipes.objects.get(id=recipes_id)
-    template = loader.get_template('recipes/recipe.html')
-    context = {
-        'recipe': recipe
-    }
+def recipe(request, slug):
+    template = loader.get_template('recipes/recipes.html')
+
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
+def about(request):
+    template = loader.get_template('recipes/about.html')
+
+    context = {}
     return HttpResponse(template.render(context, request))
 
 
@@ -37,6 +42,7 @@ def search(request):
         'recipes_list': recipes_list
     }
     return HttpResponse(template.render(context, request))
+
 
 class RecipeFinderView(TemplateView):
     template_name = 'recipes/recipe-finder.html'
