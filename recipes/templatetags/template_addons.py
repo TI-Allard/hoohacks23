@@ -5,8 +5,8 @@ register = template.Library()
 
 
 @register.simple_tag
-def get_iterator(list):
-    return range((len(list) // 4) + 1)
+def get_iterator(ingredient_list):
+    return range((len(ingredient_list) // 4) + 1)
 
 
 @register.simple_tag
@@ -15,9 +15,9 @@ def get_index(i, j):
 
 
 @register.simple_tag
-def get_recipe(list, i, j):
+def get_recipe(ingredient_list, i, j):
     try:
-        return list[get_index(i, j)]
+        return ingredient_list[get_index(i, j)]
     except:
         return None
 

@@ -7,6 +7,7 @@ from django.utils.text import slugify
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Recipes
 
+
 def home(request):
     template = loader.get_template('recipes/home.html')
 
@@ -42,6 +43,7 @@ def about(request):
 
 class RecipeFinderView(TemplateView):
     template_name = 'recipes/recipe-finder.html'
+
 
 class SearchResultsView(ListView):
     model = Recipes
