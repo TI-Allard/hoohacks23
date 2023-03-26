@@ -38,6 +38,9 @@ h1, h2, h3, h4, h5, h6 {
     <p class="w3-center w3-text-grey" style="text-align:center; font-size:25px">Work in progress...</p>
   </div>
 
+  <form action="{% url 'recipes:search-results' %}" method="get">
+    <input name="q" type="text" placeholder="Search...">
+  </form>
 
 <!-- End page content -->
 </div>
