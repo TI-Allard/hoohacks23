@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+
+<h1>Search Results</h1>
+
+
+<body>
+<ul>
+    {% for recipe in recipes_list %}
+        <li>
+            {{ recipe.recipe_name }}
+        </li>
+    {% endfor %}
+</ul>
+</body>
+
+</html>
