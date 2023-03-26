@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
     {% get_recipe recipes_list i j as recipe %}
     {% if recipe != None %}
     <div class="w3-quarter">
-      <a href="{% get_address recipe %}" style="font-size:25px">{{ recipe.recipe_name }}</a>
+      <a href="../../{% get_address recipe %}" style="font-size:25px">{{ recipe.recipe_name }}</a>
       <p>
         Steps: {{recipe.steps}}
         Ingredients: {{recipe.ingredients}}
