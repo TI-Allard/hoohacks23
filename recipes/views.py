@@ -17,14 +17,22 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 
-def recipe(request, recipes_id):
-    recipe = Recipes.objects.get(id=recipes_id)
-    template = loader.get_template('recipes/recipe.html')
-    context = {
-        'recipe': recipe
-    }
+def recipe(request, slug):
+    template = loader.get_template('recipes/recipes.html')
+
+    context = {}
     return HttpResponse(template.render(context, request))
 
 
 def search(request):
-    return HttpResponse("Not ready yet...")
+    template = loader.get_template('recipes/finder-template.html')
+
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+
+def about(request):
+    template = loader.get_template('recipes/about.html')
+
+    context = {}
+    return HttpResponse(template.render(context, request))

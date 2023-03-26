@@ -16,4 +16,4 @@ def get_recipe_name(list, i, j):
 
 @register.simple_tag
 def get_slug_from_name(list, i, j):
-    return "recipe/" + slugify(get_recipe_name(list, i, j))
+    return "recipes/" + slugify(get_recipe_name(list, i, j))
