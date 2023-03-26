@@ -53,9 +53,9 @@ h1, h2, h3, h4, h5, h6 {
     <div class="w3-quarter">
       <a href="{% get_address recipe %}" style="font-size:25px">{{ recipe.recipe_name }}</a>
       <p>
-        Steps: {{recipe.steps}}
-        Ingredients: {{recipe.ingredients}}
-        Time: {{recipe.time}}
+        <br style="display: block; margin-bottom: 0em">Steps: {{recipe.steps}}</br>
+        <br style="display: block; margin-bottom: 0em">Ingredients: {{recipe.ingredients}}</br>
+        <br style="display: block; margin-bottom: 0em">Time: {{recipe.time}}</br>
       </p>
     </div>
     {% endif %}
