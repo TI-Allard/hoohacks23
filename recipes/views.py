@@ -5,9 +5,13 @@ from django.template import loader
 from .models import Recipes
 
 def home(request):
-    recipes_list = Recipes.objects.order_by('id')[:5]
-    template = loader.get_template('recipes/recipe.html')
+    template = loader.get_template('recipes/home.html')
+
+    recipes_list = Recipes.objects.order_by('id')[:]
+    iterator = range((len(recipes_list) // 4) + 1)
+
     context = {
+        'row_iterator': iterator,
         'recipes_list': recipes_list
     }
     return HttpResponse(template.render(context, request))
