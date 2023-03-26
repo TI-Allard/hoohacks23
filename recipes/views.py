@@ -24,3 +24,7 @@ def recipe(request, recipes_id):
         'recipe': recipe
     }
     return HttpResponse(template.render(context, request))
+
+
+def search(request):
+    return HttpResponse("Not ready yet...")
