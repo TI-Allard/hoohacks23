@@ -3,17 +3,20 @@ from django.utils.text import slugify
 
 register = template.Library()
 
+
 @register.simple_tag
 def get_index(i, j):
-    return 4*int(i) + int(j)
+    return 4 * int(i) + int(j)
+
 
 @register.simple_tag
-def get_recipe_name(list, i, j):
+def get_recipe(list, i, j):
     try:
-        return list[get_index(i,j)].recipe_name
+        return list[get_index(i, j)]
     except:
-        return "None"
+        return None
+
 
 @register.simple_tag
-def get_slug_from_name(list, i, j):
-    return "recipes/" + slugify(get_recipe_name(list, i, j))
+def get_address(recipe):
+    return "recipes/" + slugify(recipe.recipe_name)

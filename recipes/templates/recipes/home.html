@@ -47,10 +47,17 @@ h1, h2, h3, h4, h5, h6 {
   {% for i in row_iterator %}
   <div class="w3-row-padding w3-padding-16 w3-center">
     {% for j in "0123" %}
+    {% get_recipe recipes_list i j as recipe %}
+    {% if recipe != None %}
     <div class="w3-quarter">
-      <a href="{% get_slug_from_name recipes_list i j %}" style="font-size:25px">{% get_recipe_name recipes_list i j %}</a>
-      <p>Description goes here!</p>
+      <a href="{% get_address recipe %}" style="font-size:25px">{{ recipe.recipe_name }}</a>
+      <p>
+        Steps: {{recipe.steps}}
+        Ingredients: {{recipe.ingredients}}
+        Time: {{recipe.time}}
+      </p>
     </div>
+    {% endif %}
     {% endfor %}
   </div>
   {% endfor %}
