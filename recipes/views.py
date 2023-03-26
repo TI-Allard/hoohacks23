@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
-
+from django.utils.text import slugify
+from django.http import HttpResponse, HttpResponseNotFound
 from .models import Recipes
 
 def home(request):
@@ -20,8 +21,16 @@ def home(request):
 def recipe(request, slug):
     template = loader.get_template('recipes/recipes.html')
 
-    context = {}
-    return HttpResponse(template.render(context, request))
+    recipes_list = Recipes.objects.order_by('id')[:]
+
+    for recipe in recipes_list:
+        if slugify(recipe.recipe_name) == slug:
+            context = {
+                'recipe': recipe
+            }
+            return HttpResponse(template.render(context, request))
+
+    return HttpResponseNotFound("The address does not correspond to a valid recipe.")
 
 
 def about(request):
@@ -29,17 +38,6 @@ def about(request):
 
     context = {}
     return HttpResponse(template.render(context, request))
-
-
-# def search(request):
-#     template = loader.get_template('recipes/finder-template.html')
-#
-#     recipes_list = Recipes.objects.order_by('id')[:]
-#
-#     context = {
-#         'recipes_list': recipes_list
-#     }
-#     return HttpResponse(template.render(context, request))
 
 
 class RecipeFinderView(TemplateView):
